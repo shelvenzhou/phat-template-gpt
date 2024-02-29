@@ -1,4 +1,5 @@
 import main from './index'
+import 'dotenv/config'
 
 async function execute(inputObj: any) {
     const inputJson = JSON.stringify(inputObj)
@@ -29,7 +30,7 @@ async function test() {
         method: 'GET',
         path: '/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf',
         queries: {},
-        secret: {},
+        secret: { openaiApiKey: process.env.OPENAI_API_KEY },
         headers: {},
     })
     console.log('GET RESULT:', JSON.parse(getResult))
@@ -40,7 +41,7 @@ async function test() {
         queries: {
             page: ['1'],
         },
-        secret: {},
+        secret: { openaiApiKey: process.env.OPENAI_API_KEY },
         headers: {},
         body: JSON.stringify(sampleInput)
     })

@@ -1,4 +1,4 @@
-export function renderHtml(): string {
+export function renderHtml(content: string): string {
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -8,7 +8,7 @@ export function renderHtml(): string {
         </head>
         <body>
             <div align="center">
-                <p>Empty</p>
+                <p>${content}</p>
             </div>
         </body>
     </html>`
