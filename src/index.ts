@@ -3,6 +3,10 @@ import { renderHtml } from './uiSupport'
 
 import OpenAI from 'openai'
 
+if (!process.env) {
+    process.env = {}
+}
+
 async function GET(req: Request): Promise<Response> {
     const openaiApiKey = req.secret?.openaiApiKey as string;
     const openai = new OpenAI({ apiKey: openaiApiKey })
